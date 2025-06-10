@@ -1,5 +1,12 @@
-import { Button } from "@repo/ui";
+"use client";
+import { SegmentedControl } from "@repo/ui";
 
 export default function Home() {
-  return <Button buttonVariant="outline">Hello Custom Theme</Button>;
+  return (
+    <SegmentedControl
+      options={["All", "Favorites", "Archived", "Deleted"]}
+      variant="outline"
+      size="lg"
+    />
+  );
 }
