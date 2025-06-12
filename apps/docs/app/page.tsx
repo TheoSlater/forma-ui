@@ -3,7 +3,7 @@ import { Heart } from "lucide-react";
 
 export default function Page() {
   return (
-    <Button variant="default" size="lg">
+    <Button variant="warning" size="lg">
       <Heart /> Like
     </Button>
   );
