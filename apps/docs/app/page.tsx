@@ -1,24 +1,17 @@
 "use client";
-import { Dialog } from "@repo/ui";
-import { useRef } from "react";
+import { Button, Input } from "@repo/ui";
 import { ModeToggle } from "./ModeToggle";
 
 export default function Home() {
-  const myRef = useRef<HTMLDivElement>(null!);
-
   return (
-    <>
-      <Dialog>
-        <Dialog.Trigger>OPEN</Dialog.Trigger>
-        <Dialog.Portal>
-          <Dialog.Overlay />
-          <Dialog.Content variant="center" size="sm" initialFocus={myRef}>
-            <Dialog.Title>Dialog Title</Dialog.Title>
-            <div ref={myRef}>Content</div>
-          </Dialog.Content>
-        </Dialog.Portal>
-      </Dialog>
+    <div className="overflow-hidden">
       <ModeToggle />
-    </>
+      <div className="flex w-full max-w-sm items-center gap-2">
+        <Input type="email" placeholder="Email" />
+        <Button type="submit" variant="outlined">
+          Subscribe
+        </Button>
+      </div>
+    </div>
   );
 }
