@@ -1,1 +1,2 @@
-export * from "../components/ui/button";
+export * from "./ui/button";
+export * from "./ui/tabs";

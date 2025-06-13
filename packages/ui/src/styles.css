@@ -38,12 +38,21 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  --info: oklch(0.55 0.2 220); /* blue-ish */
-  --info-foreground: oklch(0.95 0.05 220);
-  --success: oklch(0.5 0.25 130); /* green-ish */
-  --success-foreground: oklch(0.95 0.05 130);
-  --warning: oklch(0.7 0.35 90); /* yellow/orange-ish */
-  --warning-foreground: oklch(0.15 0.5 90);
+  /* INFO — Subtle but clearly blue */
+  --info: oklch(0.65 0.13 230);
+  --info-foreground: oklch(0.98 0.02 230);
+
+  /* SUCCESS — Soft but confident green */
+  --success: oklch(0.62 0.18 140);
+  --success-foreground: oklch(0.98 0.02 140);
+
+  /* WARNING — Strong amber/yellow without being jarring */
+  --warning: oklch(0.75 0.25 85);
+  --warning-foreground: oklch(0.2 0.05 85);
+
+  /* ERROR — Bold red, but not neon */
+  --error: oklch(0.55 0.22 25);
+  --error-foreground: oklch(0.98 0.02 25);
 }
 
 .dark {
