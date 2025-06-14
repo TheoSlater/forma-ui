@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "./theme-provider";
+import { Toaster } from "@repo/ui";
 
 const geist = Geist({ subsets: ["latin"] });
 
@@ -16,11 +17,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      <head />
-      <html lang="en">
-        <body className={geist.className}>{children}</body>
-      </html>
-    </ThemeProvider>
+    <head>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <html lang="en">
+          <body className={geist.className}>
+            <main>{children}</main>
+            <Toaster />
+          </body>
+        </html>
+      </ThemeProvider>
+    </head>
   );
 }

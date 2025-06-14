@@ -1,15 +1,15 @@
 "use client";
-import { Button, Input } from "@repo/ui";
+import { Button } from "@repo/ui";
 import { ModeToggle } from "./ModeToggle";
+import { toast } from "sonner";
 
 export default function Home() {
   return (
     <div className="overflow-hidden">
       <ModeToggle />
       <div className="flex w-full max-w-sm items-center gap-2">
-        <Input type="email" placeholder="Email" />
-        <Button type="submit" variant="outlined">
-          Subscribe
+        <Button variant="outlined" onClick={() => toast("Hello, world!")}>
+          Click me!
         </Button>
       </div>
     </div>
