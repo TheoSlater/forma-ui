@@ -2,49 +2,148 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===================   Theme Tokens (CSS Variables)=================== */
 @layer base {
   :root {
-    /* === Primary === */
-    --primary: 217 91% 60%; /* #3b82f6 */
-    --primary-hover: 221 83% 53%; /* #2563eb */
-    --primary-active: 223 76% 48%; /* #1d4ed8 */
-    --primary-text: 0 0% 100%; /* #ffffff */
-
-    /* === Secondary === */
-    --secondary: 220 9% 60%; /* #6b7280 */
-    --secondary-hover: 220 10% 34%; /* #4b5563 */
-    --secondary-active: 222 14% 27%; /* #374151 */
-    --secondary-text: 0 0% 100%; /* #ffffff */
-
-    /* === Outline === */
-    --outline-bg: 0 0% 100% / 0%; /* transparent */
-    --outline-hover: 210 40% 98%; /* #f8fafc */
-    --outline-active: 210 40% 95%; /* #f1f5f9 */
-    --outline-border: 210 16% 85%; /* #d1d5db */
-    --outline-border-hover: 220 14% 71%; /* #9ca3af */
-    --outline-border-active: 220 9% 60%; /* #6b7280 */
-    --outline-text: 222 14% 27%; /* #374151 */
-    --outline-text-hover: 222 19% 23%; /* #1f2937 */
-
-    /* === Ghost === */
+    /* Primary Palette */
+    --primary: 214 90% 57%;
+    --primary-darker: 214 85% 47%;
+    --primary-hover: 214 85% 50%;
+    --primary-active: 214 80% 45%;
+    --primary-text: 0 0% 100%;
+    --primary-focus-ring: 214 90% 57%;
+    /* Secondary Palette */
+    --secondary: 220 9% 60%;
+    --secondary-hover: 220 10% 34%;
+    --secondary-active: 222 14% 27%;
+    --secondary-text: 0 0% 100%;
+    /* Outline Variant */
+    --outline-bg: 0 0% 100% / 0%;
+    --outline-hover: 210 40% 98%;
+    --outline-active: 210 40% 95%;
+    --outline-border: 210 20% 85%;
+    --outline-border-hover: 210 18% 75%;
+    --outline-border-active: 210 15% 65%;
+    --outline-text: 222 14% 27%;
+    --outline-text-hover: 222 19% 23%;
+    /* Ghost Variant */
     --ghost-bg: 0 0% 100% / 0%;
-    --ghost-hover: 210 40% 95%; /* #f1f5f9 */
-    --ghost-active: 210 28% 90%; /* #e2e8f0 */
-    --ghost-text: 222 11% 43%; /* #475569 */
-    --ghost-text-hover: 222 15% 32%; /* #334155 */
-    --ghost-text-active: 222 28% 20%; /* #1e293b */
+    --ghost-hover: 210 40% 95%;
+    --ghost-active: 210 28% 90%;
+    --ghost-text: 222 11% 43%;
+    --ghost-text-hover: 222 15% 32%;
+    --ghost-text-active: 222 28% 20%;
+    /* Subtle Variant */
+    --subtle: 210 40% 95%;
+    --subtle-hover: 210 28% 90%;
+    --subtle-active: 214 32% 85%;
+    --subtle-text: 222 11% 43%;
+    --subtle-text-hover: 222 15% 32%;
+    --subtle-text-active: 222 28% 20%;
+    /* Disabled States */
+    --disabled-bg: 210 40% 95%;
+    --disabled-text: 215 20% 65%;
+    --disabled-border: 210 28% 90%;
+    /* Input Fields */
+    --input-bg: 210 40% 95%;
+    --input-bg-darker: 210 40% 85%;
+    --input-border: 210 20% 85%;
+    --input-text: 222 11% 43%;
+    --input-placeholder: 222 15% 32%;
+    --input-focus-ring: 214 90% 57%;
+    --input-disabled-bg: 210 40% 95%;
+    --input-disabled-text: 215 20% 65%;
+    --input-disabled-border: 210 28% 90%;
+    /* Shadow / Effects */
+    --shadow-focus: 0 0 8px hsla(var(--input-focus-ring), 0.4);
+    /* Switch Thumb */
+    --switch-thumb: 0 0% 100%;
+    --switch-thumb-disabled: var(--disabled-text);
+  }
+}
 
-    /* === Subtle === */
-    --subtle: 210 40% 95%; /* #f1f5f9 */
-    --subtle-hover: 210 28% 90%; /* #e2e8f0 */
-    --subtle-active: 214 32% 85%; /* #cbd5e1 */
-    --subtle-text: 222 11% 43%; /* #475569 */
-    --subtle-text-hover: 222 15% 32%; /* #334155 */
-    --subtle-text-active: 222 28% 20%; /* #1e293b */
-
-    /* === Disabled === */
-    --disabled-bg: 210 40% 95%; /* #f1f5f9 */
-    --disabled-text: 215 20% 65%; /* #94a3b8 */
-    --disabled-border: 210 28% 90%; /* #e2e8f0 */
+/* ===================   Custom Utility Classes=================== */
+@layer utilities {
+  /* Input Styling */
+  .border-input {
+    border-color: hsl(var(--input-border));
+    border-width: 1.5px;
+    border-radius: 0.375rem;
+  }
+  .bg-input {
+    background-color: hsl(var(--input-bg));
+  }
+  .bg-input-bg-darker {
+    background-color: hsl(var(--input-bg-darker));
+  }
+  .text-input {
+    color: hsl(var(--input-text));
+  }
+  ::placeholder {
+    color: hsl(var(--input-placeholder));
+  }
+  /* Focus Ring */
+  .focus-visible\:border-ring:focus-visible {
+    border-color: hsl(var(--input-focus-ring));
+    box-shadow: var(--shadow-focus);
+    outline: none;
+  }
+  .focus-visible\:ring-ring\/50:focus-visible {
+    --tw-ring-color: hsl(var(--input-focus-ring));
+  }
+  .focus-visible\:ring-primary-focus-ring:focus-visible {
+    --tw-ring-color: hsl(var(--primary-focus-ring));
+  }
+  /* Disabled Styling */
+  .disabled\:bg-disabled:disabled {
+    background-color: hsl(var(--input-disabled-bg));
+  }
+  .disabled\:text-disabled:disabled {
+    color: hsl(var(--input-disabled-text));
+  }
+  .disabled\:border-disabled:disabled {
+    border-color: hsl(var(--input-disabled-border));
+  }
+  .disabled\:cursor-not-allowed:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  /* State Variants */
+  .checked\:bg-primary {
+    background-color: hsl(var(--primary));
+  }
+  .checked\:border-primary {
+    border-color: hsl(var(--primary));
+  }
+  .checked\:text-primary-text {
+    color: hsl(var(--primary-text));
+  }
+  .checked\:bg-primary-darker {
+    background-color: hsl(var(--primary-darker));
+  }
+  /* Form Switch-specific */
+  .border-input-border {
+    border-color: hsl(var(--input-border));
+  }
+  .bg-input-bg {
+    background-color: hsl(var(--input-bg));
+  }
+  .bg-switch-thumb {
+    background-color: hsl(var(--switch-thumb));
+  }
+  .bg-switch-thumb-disabled {
+    background-color: hsl(var(--switch-thumb-disabled));
+  }
+  .text-subtle-text {
+    color: hsl(var(--subtle-text));
+  }
+  .text-disabled-text {
+    color: hsl(var(--disabled-text));
+  }
+  .bg-disabled-bg {
+    background-color: hsl(var(--disabled-bg));
+  }
+  .border-disabled-border {
+    border-color: hsl(var(--disabled-border));
   }
 }
