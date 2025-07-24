@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* === Primary === */
+    --primary: 217 91% 60%; /* #3b82f6 */
+    --primary-hover: 221 83% 53%; /* #2563eb */
+    --primary-active: 223 76% 48%; /* #1d4ed8 */
+    --primary-text: 0 0% 100%; /* #ffffff */
+
+    /* === Secondary === */
+    --secondary: 220 9% 60%; /* #6b7280 */
+    --secondary-hover: 220 10% 34%; /* #4b5563 */
+    --secondary-active: 222 14% 27%; /* #374151 */
+    --secondary-text: 0 0% 100%; /* #ffffff */
+
+    /* === Outline === */
+    --outline-bg: 0 0% 100% / 0%; /* transparent */
+    --outline-hover: 210 40% 98%; /* #f8fafc */
+    --outline-active: 210 40% 95%; /* #f1f5f9 */
+    --outline-border: 210 16% 85%; /* #d1d5db */
+    --outline-border-hover: 220 14% 71%; /* #9ca3af */
+    --outline-border-active: 220 9% 60%; /* #6b7280 */
+    --outline-text: 222 14% 27%; /* #374151 */
+    --outline-text-hover: 222 19% 23%; /* #1f2937 */
+
+    /* === Ghost === */
+    --ghost-bg: 0 0% 100% / 0%;
+    --ghost-hover: 210 40% 95%; /* #f1f5f9 */
+    --ghost-active: 210 28% 90%; /* #e2e8f0 */
+    --ghost-text: 222 11% 43%; /* #475569 */
+    --ghost-text-hover: 222 15% 32%; /* #334155 */
+    --ghost-text-active: 222 28% 20%; /* #1e293b */
+
+    /* === Subtle === */
+    --subtle: 210 40% 95%; /* #f1f5f9 */
+    --subtle-hover: 210 28% 90%; /* #e2e8f0 */
+    --subtle-active: 214 32% 85%; /* #cbd5e1 */
+    --subtle-text: 222 11% 43%; /* #475569 */
+    --subtle-text-hover: 222 15% 32%; /* #334155 */
+    --subtle-text-active: 222 28% 20%; /* #1e293b */
+
+    /* === Disabled === */
+    --disabled-bg: 210 40% 95%; /* #f1f5f9 */
+    --disabled-text: 215 20% 65%; /* #94a3b8 */
+    --disabled-border: 210 28% 90%; /* #e2e8f0 */
+  }
+}
